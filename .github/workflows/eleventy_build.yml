@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: '22.x'
       - run: npm install
-      - run: npm run 11ty:build
+      - run: npm run 11ty:build -- --pathprefix /${{ github.event.repository.name }}/
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
